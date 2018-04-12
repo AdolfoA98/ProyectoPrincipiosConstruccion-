@@ -16,27 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `curso`
+-- Table structure for table `plancurso_datosgenerales`
 --
 
-DROP TABLE IF EXISTS `curso`;
+DROP TABLE IF EXISTS `plancurso_datosgenerales`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `curso` (
-  `Id_Curso` int(11) DEFAULT NULL,
-  `Nombre` varchar(75) DEFAULT NULL,
-  `Creditos` varchar(20) DEFAULT NULL,
-  `Periodo` varchar(20) DEFAULT NULL
+CREATE TABLE `plancurso_datosgenerales` (
+  `Clave_NRC` int(10) DEFAULT NULL,
+  `ExperienciaEducativa_Nombre` varchar(50) DEFAULT NULL,
+  `PeriodoEducativo` varchar(50) DEFAULT NULL,
+  `Bloque` int(10) DEFAULT NULL,
+  `Seccion` int(10) DEFAULT NULL,
+  `Academico_Nombre` varchar(50) DEFAULT NULL,
+  `Periodo` varchar(75) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `curso`
+-- Dumping data for table `plancurso_datosgenerales`
 --
 
-LOCK TABLES `curso` WRITE;
-/*!40000 ALTER TABLE `curso` DISABLE KEYS */;
-/*!40000 ALTER TABLE `curso` ENABLE KEYS */;
+LOCK TABLES `plancurso_datosgenerales` WRITE;
+/*!40000 ALTER TABLE `plancurso_datosgenerales` DISABLE KEYS */;
+/*!40000 ALTER TABLE `plancurso_datosgenerales` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-12 17:37:12
+-- Dump completed on 2018-04-12 17:37:15
