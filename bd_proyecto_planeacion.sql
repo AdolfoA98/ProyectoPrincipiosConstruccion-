@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `curso`
+-- Table structure for table `planeacion`
 --
 
-DROP TABLE IF EXISTS `curso`;
+DROP TABLE IF EXISTS `planeacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `curso` (
-  `Id_Curso` int(11) DEFAULT NULL,
-  `Nombre` varchar(75) DEFAULT NULL,
-  `Creditos` varchar(20) DEFAULT NULL,
-  `Periodo` varchar(20) DEFAULT NULL
+CREATE TABLE `planeacion` (
+  `unidad` int(10) DEFAULT NULL,
+  `fechas` varchar(30) DEFAULT NULL,
+  `temas_desarrollados` varchar(100) DEFAULT NULL,
+  `tecnica_didactica_utilizada` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `curso`
+-- Dumping data for table `planeacion`
 --
 
-LOCK TABLES `curso` WRITE;
-/*!40000 ALTER TABLE `curso` DISABLE KEYS */;
-/*!40000 ALTER TABLE `curso` ENABLE KEYS */;
+LOCK TABLES `planeacion` WRITE;
+/*!40000 ALTER TABLE `planeacion` DISABLE KEYS */;
+/*!40000 ALTER TABLE `planeacion` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-13 16:51:28
+-- Dump completed on 2018-04-13 16:51:30
