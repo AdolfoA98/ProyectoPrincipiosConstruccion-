@@ -13,9 +13,8 @@ import mx.fei.dominio.Actividad;
 
 public interface IActividadDAO{
     
-    List<Actividad> obtenerActividades();
-    Actividad obtenerActividad();
-    boolean agregarActividad(Actividad actividad);
-    boolean eliminarActividad(String idActividad);
+    List<Actividad> obtenerActividades(int idObjetivo);
+    boolean agregarActividad(Actividad actividad, int idObjetivo);
+    boolean eliminarActividad(int idActividad);
     
 }

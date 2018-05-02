@@ -13,6 +13,7 @@ import java.util.List;
 
 public class Objetivo {
     
+    private int idObjetivo;
     private String meta;
     private List<Actividad> actividades;
     

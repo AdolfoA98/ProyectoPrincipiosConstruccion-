@@ -5,10 +5,8 @@
  */
 package sgpa;
 
-/**
- *
- * @author adolf
- */
+import mx.fei.dao.ActividadDAO;
+
 public class SGPA
 {
 
@@ -17,7 +15,9 @@ public class SGPA
      */
     public static void main(String[] args)
     {
-        // TODO code application logic here
+        ActividadDAO actividadDao = new ActividadDAO();
+        
+        actividadDao.obtenerActividades(123456);
     }
     
 }

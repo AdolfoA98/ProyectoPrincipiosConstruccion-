@@ -10,11 +10,20 @@ package mx.fei.dominio;
 
 public class Actividad{
     
+    private int id;
     private String nombre;
     private String fecha;
     private String formaDeOperar;
     
     public Actividad(){}
+    
+    public void setId(int id){
+        this.id = id;
+    }
+    
+    public int getId(){
+        return id;
+    }
     
     public void setNombre(String nombre){
         this.nombre = nombre;
