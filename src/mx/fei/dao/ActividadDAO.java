@@ -62,7 +62,7 @@ public class ActividadDAO implements IActividadDAO{
         query = "insert into actividad values (?, ?, ?, ?, ?)";
         conexion = DataBase.obtenerConexion();
         
-        int id = obtenerId();
+        int id = actividad.getId();
         String nombre = actividad.getNombre();
         String fecha = actividad.getFecha();
         String formaDeOperar = actividad.getFormaDeOperar();
@@ -84,21 +84,20 @@ public class ActividadDAO implements IActividadDAO{
 
     @Override
     public boolean eliminarActividad(int idActividad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    private int obtenerId(){
         
-        int llave = 0;
-        SecureRandom clave;
+        boolean success = false;
+        conexion = DataBase.obtenerConexion();
+        query = "delete from actividad where idActividad = ?";
         
         try{
-            clave = SecureRandom.getInstance("SHA1PRNG");
-            llave = clave.nextInt(50000);
-        }catch(NoSuchAlgorithmException ex){
+            PreparedStatement comando = conexion.prepareStatement(query);
+            comando.setInt(1, idActividad);
+            success = comando.execute();
+        }catch(SQLException ex){
             Logger.getLogger(ActividadDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        return llave;
+        return success;
     }
+
 }
