@@ -13,14 +13,17 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import mx.fei.dominio.Actividad;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mx.fei.dominio.GeneradorClave;
+import mx.fei.excepcion.TablaNoEncontradaException;
 
 public class ActividadDAOTest {
     
     private List<Actividad> listaActividades = new ArrayList<>();
     private ActividadDAO actividadDAO = new ActividadDAO();
-    private int primerId = GeneradorClave.obtenerId();
-    private int segundoId = GeneradorClave.obtenerId();
+    private int primerId = obtenerId();
+    private int segundoId = obtenerId();
     
     public ActividadDAOTest() {
         Actividad actividad1 = new Actividad();
@@ -37,6 +40,18 @@ public class ActividadDAOTest {
         
         listaActividades.add(actividad1);
         listaActividades.add(actividad2);
+    }
+    
+    private int obtenerId(){
+        int id = 15;
+        
+        try{
+            id = GeneradorClave.obtenerId("Actividad");
+        }catch(TablaNoEncontradaException ex){
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return id;
     }
     
     /*
