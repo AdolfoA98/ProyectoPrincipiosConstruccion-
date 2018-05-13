@@ -8,9 +8,11 @@
 */
 package mx.fei.database;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
@@ -19,17 +21,24 @@ public class DataBase {
     private static Connection conexion;
     
     //TODO poner en un archivo de propiedades
-    static String url = "jdbc:mysql://localhost/";
-    static String database = "sgpa";
-    static String userName = "adolfo";
-    static String contra = "dima670208";
     
     private static void crearConexion(){
+        Configuracion configuracion = new Configuracion();
+        Properties properties = null;
         try{
-            conexion = (Connection) DriverManager.getConnection(url + database, userName, contra);
-        }catch(SQLException ex){
+            properties = configuracion.cargarConfiguracion();
+            String url = "jdbc:mysql://" + properties.getProperty("server") + "/";
+            String dataBase = properties.getProperty("database");
+            String userName = properties.getProperty("username");
+            String password = properties.getProperty("password");
+            conexion = (Connection) DriverManager.getConnection(url + dataBase + "?autoReconnect=true&useSSL=false", userName, password);
+        }catch(IOException | SQLException ex){
             Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    private static void cargarPropiedades(){
+        
     }
     
     public static Connection obtenerConexion(){
