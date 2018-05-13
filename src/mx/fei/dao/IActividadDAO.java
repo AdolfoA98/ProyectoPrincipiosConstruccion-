@@ -16,5 +16,6 @@ public interface IActividadDAO{
     List<Actividad> obtenerActividades(int idObjetivo);
     boolean agregarActividad(Actividad actividad, int idObjetivo);
     boolean eliminarActividad(int idActividad);
+    boolean editarActividad(Actividad actividadActualizada, int idObjetivo);
     
 }
