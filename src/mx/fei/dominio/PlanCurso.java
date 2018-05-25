@@ -3,8 +3,8 @@
 * Clase:       PlanCurso
 * Nombre:      Primitio Cruz Hernandez
 * Fecha:       10/05/2018
-* Versión:     0.1
-* Descripción: Atributos del plan de curso
+* Versión:     0.2
+* Descripción: Atributos de la clase Plan de curso
 */
 
 package mx.fei.domain;
@@ -12,8 +12,10 @@ package mx.fei.domain;
 public class PlanCurso {
     private int claveNrc;
     private String experienciaEducativa, peridoEducativo, bloque, seccion, academico, periodo, objetivoGeneral;
+    protected Planeacion planeacion;
     
     public PlanCurso(){
+        planeacion=new Planeacion();
     }
 
     public void setClaveNrc(int claveNrcEntrada) {
