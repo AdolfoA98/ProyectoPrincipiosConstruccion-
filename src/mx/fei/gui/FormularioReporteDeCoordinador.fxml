@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="gridPane" prefHeight="450.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.fei.gui.FormularioReporteDeCoordinadorController">
+    <Label text="Reporte de Coordinador">
+        
+        <font>
+            <Font size="20"/>
+        </font>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <Label text="Selecciona todos aquellos cursos cuyos examenes fueron revisados por la academia"
+           wrapText="true"
+           GridPane.rowIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TableView fx:id="tablaCursos"
+               GridPane.rowIndex="2">
+        
+        <columns>
+            <TableColumn text="Nombre" prefWidth="215"/>
+            <TableColumn text="Instructor" prefWidth="215"/>
+        </columns>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10" bottom="10"/>
+        </GridPane.margin>
+        
+    </TableView>
+    
+    <StackPane prefWidth="430"
+               GridPane.columnSpan="2"
+               GridPane.rowIndex="5">
+        
+        <Button fx:id="botonFinalizar"
+                text="Finalizar">
+            
+            <StackPane.margin>
+                <Insets top="10" left="100"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonCancelar"
+                text="Regresar">
+            
+            <StackPane.margin>
+                <Insets top="10" right="100"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+        <GridPane.margin>
+            <Insets bottom="10"/>
+        </GridPane.margin>
+        
+    </StackPane>
+</GridPane>

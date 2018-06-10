@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="gridPane"
+          prefHeight="450.0"
+          prefWidth="500.0"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="mx.fei.gui.PagVisualizarDocumentoController">
+    
+    <Label text="Visualizar Documento"
+           GridPane.columnSpan="2">
+        
+        <font>
+            <Font size="20"/>
+        </font>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10" />
+        </GridPane.margin>
+        
+    </Label>
+    
+    <Label text="Tipo de documento"
+           GridPane.rowIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10" />
+        </GridPane.margin>
+        
+    </Label>
+    
+    <ComboBox fx:id="tipoDocumentos"
+              GridPane.rowIndex="1"
+              GridPane.columnIndex="1"
+              prefWidth="200">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10" />
+        </GridPane.margin>
+        
+    </ComboBox>
+    
+    <Button fx:id="botonVisualizar"
+            text="Visualizar Documento"
+            GridPane.rowIndex="1"
+            GridPane.columnIndex="2">
+        
+        <GridPane.margin>
+            <Insets top="10" left="50" />
+        </GridPane.margin>
+        
+    </Button>
+    
+    <TableView prefWidth="480"
+               GridPane.rowIndex="2"
+               GridPane.columnSpan="3">
+            
+        <columns>
+            <TableColumn text="Nombre" prefWidth="200"/>
+            <TableColumn text="Fecha creación/modificación" prefWidth="200"/>
+        </columns>
+            
+        <GridPane.margin>
+            <Insets top="10" left="10" right="10" bottom="10"/>
+        </GridPane.margin>
+            
+    </TableView>
+    
+    <StackPane GridPane.rowIndex="3"
+               GridPane.columnSpan="3"
+               prefWidth="500">
+        
+        <Button fx:id="botonRegresar"
+                text="Regresar">
+            
+            <StackPane.margin>
+                <Insets top="10" bottom="10"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+    </StackPane>
+    
+</GridPane>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="AnchorPane"
+            prefHeight="460.0"
+            prefWidth="400.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="mx.fei.gui.FormularioPlanDeTrabajoController">
+    
+    <Label text="Crear Plan de Trabajo"
+           GridPane.columnSpan="2">
+        
+        <font>
+            <Font size="18"/>
+        </font>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <Label text="Fecha de Aprobación"
+           GridPane.rowIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="15" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <DatePicker fx:id="fechaAprobacion"
+                GridPane.rowIndex="1"
+                GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="15" left="10"/>
+        </GridPane.margin>
+        
+    </DatePicker>
+    
+    <Label text="Programa educativo"
+           GridPane.rowIndex="2">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextField fx:id="programaEducativo"
+                GridPane.rowIndex="2"
+                GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextField>
+    
+    <Label text="Periodo escolar"
+           GridPane.rowIndex="3">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextField fx:id="periodoEscolar"
+                GridPane.rowIndex="3"
+                GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextField>
+    
+    <Label text="Nombre de la academia"
+           GridPane.rowIndex="4">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextField fx:id="nombreAcademia"
+                GridPane.rowIndex="4"
+                GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextField>
+    
+    <Label text="Nombre del Coordinador"
+           GridPane.rowIndex="5">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextField fx:id="nombreCoordinador"
+                GridPane.rowIndex="5"
+                GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextField>
+    
+    <Label text="Objetivo General"
+           GridPane.rowIndex="6"
+           GridPane.valignment="TOP">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextArea fx:id="objetivoGeneral"
+              GridPane.rowIndex="6"
+              GridPane.columnIndex="1"
+              prefWidth="200"
+              prefHeight="150"
+              wrapText="true">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextArea>
+    
+    <HBox GridPane.rowIndex="7"
+          GridPane.columnSpan="2"
+          prefWidth="300">
+        
+        <StackPane prefWidth="400"
+                   HBox.hgrow="ALWAYS">
+            
+            <Button fx:id="botonSiguiente"
+                    onAction="#cargarSiguientePagina"
+                    text="Siguiente">
+                
+                <StackPane.margin>
+                    <Insets left="80"/>
+                </StackPane.margin>
+                
+            </Button>
+            
+            <Button fx:id="botonCancelar"
+                    text="Cancelar">
+                
+                <StackPane.margin>
+                    <Insets right="80"/>
+                </StackPane.margin>
+                
+            </Button>
+            
+        </StackPane>
+        
+        <GridPane.margin>
+            <Insets top="25" />
+        </GridPane.margin>
+        
+    </HBox>
+    
+</GridPane>

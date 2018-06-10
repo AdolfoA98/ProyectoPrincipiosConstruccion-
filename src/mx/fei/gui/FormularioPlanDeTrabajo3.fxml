@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="gridPane"
+              prefHeight="400.0"
+              prefWidth="400.0"
+              xmlns:fx="http://javafx.com/fxml/1"
+              fx:controller="mx.fei.gui.FormularioPlanDeTrabajo3Controller">
+    
+    <Label text="Temas para exámenes parciales"
+           GridPane.columnSpan="2">
+        
+        <font>
+            <Font size="18"/>
+        </font>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <Label text="Experiencia Educativa"
+           GridPane.rowIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <ComboBox fx:id="experienciasEducativas"
+              prefWidth="150"
+              GridPane.rowIndex="1"
+              GridPane.columnIndex="1"
+              promptText="EE">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </ComboBox>
+    
+    <Label text="Temas del Primer Parcial: "
+           GridPane.rowIndex="2">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextArea fx:id="temasPrimerParcial"
+              GridPane.rowIndex="3"
+              GridPane.columnSpan="2"
+              prefWidth="380"
+              prefHeight="80"
+              wrapText="true">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextArea>
+    
+    <Label text="Temas del Segundo Parcial: "
+           GridPane.rowIndex="4">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextArea fx:id="temasSegundoParcial"
+              GridPane.rowIndex="5"
+              GridPane.columnSpan="2"
+              prefWidth="380"
+              prefHeight="80"
+              wrapText="true">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextArea>
+    
+    <StackPane prefWidth="380"
+               GridPane.columnSpan="2"
+               GridPane.rowIndex="9">
+        
+        <Button fx:id="botonSiguiente"
+                onAction="#cargarSiguientePagina"
+                text="Siguiente">
+            
+            <StackPane.margin>
+                <Insets top="10" left="280"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonAgregarAcciones"
+                text="Guardar y cargar otra experiencia">
+            
+            <StackPane.margin>
+                <Insets top="10"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonAtras"
+                onAction="#regresarPaginaAnterior"
+                text="Regresar">
+            
+            <StackPane.margin>
+                <Insets top="10" right="280"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+        <GridPane.margin>
+            <Insets top="25"/>
+        </GridPane.margin>
+        
+    </StackPane>
+    
+</GridPane>

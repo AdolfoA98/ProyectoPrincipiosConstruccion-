@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="gridPane"
+          prefHeight="400.0"
+          prefWidth="400.0"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="mx.fei.gui.FormularioPlanDeTrabajo4Controller">
+    
+    <Label text="Formas de Evaluación"
+           GridPane.columnSpan="2">
+        
+        <font>
+            <Font size="24"/>
+        </font>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <Label text="Elemento"
+           GridPane.rowIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextField fx:id="elemento"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextField>
+    
+    <Label text="Porcentaje"
+           GridPane.rowIndex="2">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextField fx:id="porcentaje"
+               GridPane.rowIndex="2"
+               GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextField>
+    
+    <Button fx:id="botonAgregarElemento"
+            text="Agregar Elemento"
+            GridPane.rowIndex="3"
+            GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Button>
+    
+    <TableView fx:id="tablaElementosEvaluacion"
+               GridPane.rowIndex="4"
+               GridPane.columnSpan="2"
+               prefWidth="380">
+        
+        <columns>
+            <TableColumn text="Elemento" prefWidth="200"/>
+            <TableColumn text="Porcentaje (total 100%)" prefWidth="180"/>
+        </columns>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TableView>
+    
+    <StackPane prefWidth="380"
+               GridPane.columnSpan="2"
+               GridPane.rowIndex="5">
+        
+        <Button fx:id="botonFinalizar"
+                text="Finalizar">
+            
+            <StackPane.margin>
+                <Insets top="10" left="100"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonAtras"
+                onAction="#regresarPaginaAnterior"
+                text="Regresar">
+            
+            <StackPane.margin>
+                <Insets top="10" right="100"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+        <GridPane.margin>
+            <Insets bottom="10"/>
+        </GridPane.margin>
+        
+    </StackPane>
+    
+</GridPane>

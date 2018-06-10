@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+* Programa:    SGPA
+* Clase:       Principal.fxml
+* Nombre:      Adolfo Angel de la Cruz Diaz
+* Fecha:       29/05/2018
+* Versión:     1.0
+* Descripción: Página fxml que representa la página principal del sistema.
+-->
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane"
+            prefHeight="400.0"
+            prefWidth="600.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="mx.fei.gui.PrincipalController">
+    
+    <GridPane prefWidth="600"
+              prefHeight="400">
+        
+        <HBox GridPane.columnSpan="5"
+              prefWidth="600"
+              prefHeight="50">
+            
+            <Label text="SGPA">
+            
+                <font>
+                    <Font size="28" />
+                </font>
+            
+                <HBox.margin>
+                    <Insets top="10" left="10"/>
+                </HBox.margin>
+            
+            </Label>
+            
+            <StackPane prefWidth="500"
+                       HBox.hgrow="ALWAYS">
+                
+                <Button fx:id="botonLogout"
+                        StackPane.alignment="TOP_RIGHT">
+                    
+                    <graphic>
+                        <ImageView fitHeight="30"
+                                   fitWidth="30"
+                                   preserveRatio="true">
+                            <Image url="/mx/fei/images/logout.png"/>
+                        </ImageView>
+                    </graphic>
+                    
+                    <StackPane.margin>
+                        <Insets top="10" right="10"/>
+                    </StackPane.margin>
+                
+                </Button>
+            </StackPane>
+        </HBox>
+        
+        <Label text="Secciones"
+               GridPane.rowIndex="1">
+            
+            <font>
+                <Font size="18"/>
+            </font>
+            
+            <GridPane.margin>
+                <Insets top="10" left="10"/>
+            </GridPane.margin>
+            
+        </Label>
+        
+        <Button fx:id="botonAvance"
+                text="Avance Programático"
+                prefWidth="150"
+                prefHeight="30"
+                GridPane.rowIndex="2">
+            
+            <GridPane.margin>
+                <Insets top="10" left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        <Button fx:id="botonPlanCurso"
+                text="Plan de Curso"
+                prefWidth="150"
+                prefHeight="30"
+                GridPane.rowIndex="3">
+            
+            <GridPane.margin>
+                <Insets left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonMinuta"
+                text="Minuta"
+                prefWidth="150"
+                prefHeight="30"
+                GridPane.rowIndex="4">
+            
+            <GridPane.margin>
+                <Insets left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonPlanTrabajo"
+                text="Plan de Trabajo"
+                onAction="#cargarPagPlanDeTrabajo"
+                prefWidth="150"
+                prefHeight="30"
+                GridPane.rowIndex="5">
+            
+            <GridPane.margin>
+                <Insets left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonReporteCoordinador"
+                text="Reporte de Coordinador"
+                onAction="#cargarReporteCoordinador"
+                prefWidth="150"
+                prefHeight="30"
+                GridPane.rowIndex="6">
+            
+            <GridPane.margin>
+                <Insets left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonReporteGeneral"
+                text="Reporte General"
+                prefWidth="150"
+                prefHeight="30"
+                GridPane.rowIndex="7">
+            
+            <GridPane.margin>
+                <Insets left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonVerDocumento"
+                text="Visualizar Documento"
+                onAction="#cargarVisualizadorDocumento"
+                prefWidth="150"
+                prefHeight="30"
+                GridPane.rowIndex="8">
+            
+            <GridPane.margin>
+                <Insets left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonDocumentosRecibidos"
+                text="Documentos Recibidos"
+                prefWidth="150"
+                prefHeight="30"
+                GridPane.rowIndex="9">
+            
+            <GridPane.margin>
+                <Insets left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonEnviarDocumento"
+                text="Enviar documento"
+                prefWidth="150"
+                prefHeight="30"
+                GridPane.rowIndex="10">
+            
+            <GridPane.margin>
+                <Insets left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        
+        <Label text="Eventos"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="1">
+            
+            <font>
+                <Font size="18"/>
+            </font>
+            
+            <GridPane.margin>
+                <Insets top="10" left="15"/>
+            </GridPane.margin>
+            
+        </Label>
+        
+        <TableView prefWidth="430"
+                   GridPane.rowIndex="2"
+                   GridPane.columnIndex="1"
+                   GridPane.rowSpan="10"
+                   GridPane.columnSpan="4">
+            
+            <columns>
+                <TableColumn text="Asunto" prefWidth="155"/>
+                <TableColumn text="Fecha"/>
+                <TableColumn text="Hora de Inicio" prefWidth="100"/>
+                <TableColumn text="Lugar"/>
+            </columns>
+            
+            <GridPane.margin>
+                <Insets left="15" right="10" bottom="10"/>
+            </GridPane.margin>
+            
+        </TableView>
+    </GridPane>
+</AnchorPane>

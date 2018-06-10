@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane"
+            prefHeight="500.0"
+            prefWidth="400.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="mx.fei.gui.PagReporteDeCoordinadorController">
+    <GridPane>
+        <Label text="Reporte de Coordinador"
+               prefWidth="200">
+            
+            <font>
+                <Font size="18"/>
+            </font>
+            
+            <GridPane.margin>
+                <Insets top="10" left="10"/>
+            </GridPane.margin>
+            
+        </Label>
+        
+        <Button fx:id="botonCrear"
+                text="Crear nuevo"
+                onAction="#crearReporteDeCoordinador"
+                prefWidth="90"
+                GridPane.columnIndex="1">
+            
+            <GridPane.margin>
+                <Insets top="10" left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        <Button fx:id="botonEditar"
+                text="Editar"
+                prefWidth="90"
+                GridPane.columnIndex="2">
+            
+            <GridPane.margin>
+                <Insets top="10" left="10"/>
+            </GridPane.margin>
+            
+        </Button>
+        
+        <TableView prefWidth="380"
+                   GridPane.rowIndex="1"
+                   GridPane.columnSpan="3">
+            
+            <columns>
+                <TableColumn text="Nombre" prefWidth="200"/>
+                <TableColumn text="Fecha creación/modificación" prefWidth="200"/>
+            </columns>
+            
+            <GridPane.margin>
+                <Insets top="10" left="10" right="10" bottom="10"/>
+            </GridPane.margin>
+            
+        </TableView>
+    </GridPane> 
+</AnchorPane>

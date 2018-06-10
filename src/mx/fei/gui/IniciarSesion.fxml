@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="gridPane"
+          prefHeight="200.0"
+          prefWidth="350.0"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="mx.fei.gui.IniciarSesionController">
+    
+    <StackPane prefWidth="400">
+        <Label text="Iniciar Sesión">
+        
+            <font>
+                <Font size="28"/>
+            </font>
+        
+        </Label>
+    </StackPane>
+    
+    <VBox prefWidth="400"
+          GridPane.rowIndex="1">
+        
+        <StackPane prefWidth="400"
+                   VBox.vgrow="ALWAYS">
+            
+            <TextField fx:id="username"
+                       maxWidth="300"
+                       maxHeight="25"
+                       promptText="Usuario"/>
+            
+            <VBox.margin>
+                <Insets top="20"/>           
+            </VBox.margin>
+            
+        </StackPane>
+        
+        <StackPane prefWidth="400"
+                   VBox.vgrow="ALWAYS">
+            
+            <PasswordField fx:id="password"
+                       maxWidth="300"
+                       maxHeight="25"
+                       promptText="Contraseña"/>
+            
+            <VBox.margin>
+                <Insets top="10"/>           
+            </VBox.margin>
+            
+        </StackPane>
+    </VBox>
+    
+    <HBox prefWidth="350"
+          GridPane.rowIndex="2">
+        
+        <StackPane prefWidth="350"
+                   HBox.hgrow="ALWAYS">
+            
+            <Button fx:id="botonAceptar"
+                    text="Aceptar"
+                    maxWidth="70">
+                
+                <StackPane.margin>
+                    <Insets right="80"/>
+                </StackPane.margin>
+                
+            </Button>
+            
+            <Button fx:id="botonCancelar"
+                    text="Cancelar"
+                    maxWidth="70">
+                
+                <StackPane.margin>
+                    <Insets left="80"/>
+                </StackPane.margin>
+                
+            </Button>
+            
+            <HBox.margin>
+                <Insets top="20"/>           
+            </HBox.margin>
+            
+        </StackPane>
+        
+    </HBox>
+</GridPane>

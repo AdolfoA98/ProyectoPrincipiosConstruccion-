@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane id="gridPane"
+          prefHeight="530.0"
+          prefWidth="400.0"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="mx.fei.gui.FormularioPlanDeTrabajo2Controller">
+    
+    <Label text="Acciones">
+        
+        <font>
+            <Font size="16"/>
+        </font>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <Label text="Objetivo Particular"
+           GridPane.rowIndex="1"
+           GridPane.valignment="TOP">
+        
+        <GridPane.margin>
+            <Insets top="15" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextArea fx:id="objetivoParticular"
+              GridPane.rowIndex="1"
+              GridPane.columnIndex="1"
+              prefWidth="200"
+              prefHeight="40"
+              wrapText="true">
+        
+        <GridPane.margin>
+            <Insets top="15" left="10"/>
+        </GridPane.margin>
+        
+    </TextArea>
+    
+    <Label text="Meta"
+           GridPane.rowIndex="2"
+           GridPane.valignment="TOP">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextArea fx:id="meta"
+              GridPane.rowIndex="2"
+              GridPane.columnIndex="1"
+              prefWidth="200"
+              prefHeight="40"
+              wrapText="true">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextArea>
+    
+    <Label text="Actividades"
+           GridPane.rowIndex="3">
+        
+        <font>
+            <Font size="15"/>
+        </font>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <Label text="Nombre de la actividad"
+           GridPane.rowIndex="4">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextField fx:id="nombreActividad"
+                GridPane.rowIndex="4"
+                GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextField>
+    
+    <Label text="Fecha"
+           GridPane.rowIndex="5">
+        
+        <GridPane.margin>
+            <Insets top="15" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <DatePicker fx:id="fecha"
+                GridPane.rowIndex="5"
+                GridPane.columnIndex="1">
+        
+        <GridPane.margin>
+            <Insets top="15" left="10"/>
+        </GridPane.margin>
+        
+    </DatePicker>
+    
+    <Label text="Forma de Operar"
+           GridPane.rowIndex="6"
+           GridPane.valignment="TOP">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Label>
+    
+    <TextArea fx:id="formaDeOperar"
+              GridPane.rowIndex="6"
+              GridPane.columnIndex="1"
+              prefWidth="200"
+              prefHeight="40"
+              wrapText="true">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TextArea>
+    
+    <Button fx:id="botonAgregarActividad"
+            text="Agregar Actividad"
+            GridPane.rowIndex="7">
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </Button>
+    
+    <TableView fx:id="tablaActividades"
+               GridPane.rowIndex="8"
+               GridPane.columnSpan="2"
+               prefWidth="380"
+               prefHeight="150">
+        
+        <columns>
+            <TableColumn text="Nombre" prefWidth="120"/>
+            <TableColumn text="Fecha" prefWidth="90"/>
+            <TableColumn text="Forma de Operar" prefWidth="170"/>
+        </columns>
+        
+        <GridPane.margin>
+            <Insets top="10" left="10"/>
+        </GridPane.margin>
+        
+    </TableView>
+    
+    <StackPane prefWidth="380"
+               GridPane.columnSpan="2"
+               GridPane.rowIndex="9">
+        
+        <Button fx:id="botonSiguiente"
+                onAction="#cargarSiguientePagina"
+                text="Siguiente">
+            
+            <StackPane.margin>
+                <Insets top="10" left="220"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonAgregarAcciones"
+                text="Agregar más acciones">
+            
+            <StackPane.margin>
+                <Insets top="10"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+        <Button fx:id="botonAtras"
+                onAction="#regresarPaginaAnterior"
+                text="Regresar">
+            
+            <StackPane.margin>
+                <Insets top="10" right="220"/>
+            </StackPane.margin>
+            
+        </Button>
+        
+    </StackPane>
+    
+</GridPane>
