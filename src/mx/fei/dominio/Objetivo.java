@@ -14,10 +14,27 @@ import java.util.List;
 public class Objetivo {
     
     private int idObjetivo;
+    private String objetivo;
     private String meta;
     private List<Actividad> actividades;
     
     public Objetivo(){}
+    
+    public void setId(int id){
+        this.idObjetivo = id;
+    }
+    
+    public int getId(){
+        return idObjetivo;
+    }
+    
+    public void setTextoObjetivo(String objetivo){
+        this.objetivo = objetivo;
+    }
+    
+    public String getTextObjetivo(){
+        return objetivo;
+    }
     
     public void setMeta(String meta){
         this.meta = meta;

@@ -9,23 +9,22 @@
 */
 package mx.fei.dominio;
 
-import java.util.List;
+import java.sql.Date;
 
 public class PlanDeTrabajo {
     
-    private String fechaAprobacion;
+    private String nombre; 
+    private Date fechaAprobacion;
     private String objetivoGeneral;
-    private List<Objetivo> objetivos;
-    private List<TemaExamen> temasDeExamen;
-    private List<Evaluacion> evaluaciones;
+    private Date fechaCreacion;
     
     public PlanDeTrabajo(){}
     
-    public void setFechaAprobacion(String fechaAprobacion){
+    public void setFechaAprobacion(Date fechaAprobacion){
         this.fechaAprobacion = fechaAprobacion;
     }
     
-    public String getFechaAprobacion(){
+    public Date getFechaAprobacion(){
         return fechaAprobacion;
     }
     
@@ -35,29 +34,5 @@ public class PlanDeTrabajo {
     
     public String getObjetivoGeneral(){
         return objetivoGeneral;
-    }
-    
-    public void setObjetivos(List<Objetivo> objetivos){
-        this.objetivos = objetivos;
-    }
-    
-    public List<Objetivo> getObjetivos(){
-        return objetivos;
-    }
-    
-    public void setTemasDeExamen(List<TemaExamen> temasDeExamen){
-        this.temasDeExamen = temasDeExamen;
-    }
-    
-    public List<TemaExamen> getTemasDeExamen(){
-        return temasDeExamen;
-    }
-    
-    public void setEvaluacion(List<Evaluacion> evaluaciones){
-        this.evaluaciones = evaluaciones;
-    }
-    
-    public List<Evaluacion> getEvaluaciones(){
-        return evaluaciones;
     }
 }

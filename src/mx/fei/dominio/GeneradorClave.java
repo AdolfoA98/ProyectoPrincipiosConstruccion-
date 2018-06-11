@@ -7,15 +7,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import mx.fei.dao.ActividadDAO;
 import mx.fei.database.DataBase;
 import mx.fei.excepcion.TablaNoEncontradaException;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class GeneradorClave {
     
     private static int clave = -1;;
+    private static final Logger LOGGER = LogManager.getLogger(GeneradorClave.class);
         
     public static int obtenerId(String tabla) throws TablaNoEncontradaException {
         
@@ -29,7 +29,8 @@ public class GeneradorClave {
                 clave = llave.nextInt(500000);
             }
         }catch(NoSuchAlgorithmException ex){
-            Logger.getLogger(ActividadDAO.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(ActividadDAO.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("El algoritmo especificado para generar la clave no existe");
         }
         
         return clave;
@@ -100,7 +101,8 @@ public class GeneradorClave {
                }
            }
         }catch(SQLException ex){
-            Logger.getLogger(GeneradorClave.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(GeneradorClave.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("Error al revisar las claves existentes en la tabla");
         }
         
         return estaEnTabla;
@@ -109,4 +111,3 @@ public class GeneradorClave {
     public GeneradorClave(){}
     
 }
-

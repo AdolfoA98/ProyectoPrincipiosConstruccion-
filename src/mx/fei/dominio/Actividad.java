@@ -8,11 +8,13 @@
 */
 package mx.fei.dominio;
 
+import java.sql.Date;
+
 public class Actividad{
     
     private int id;
     private String nombre;
-    private String fecha;
+    private Date fecha;
     private String formaDeOperar;
     
     public Actividad(){}
@@ -33,11 +35,11 @@ public class Actividad{
         return nombre;
     }
     
-    public void setFecha(String fecha){
+    public void setFecha(Date fecha){
         this.fecha = fecha;
     }
     
-    public String getFecha(){
+    public Date getFecha(){
         return fecha;
     }
     

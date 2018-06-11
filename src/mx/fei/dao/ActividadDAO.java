@@ -9,6 +9,7 @@
 package mx.fei.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,7 +43,7 @@ public class ActividadDAO implements IActividadDAO{
                 Actividad actividad = new Actividad();
                 actividad.setId(tablaSQL.getInt("idActividad"));
                 actividad.setNombre(tablaSQL.getString("nombre"));
-                actividad.setFecha(tablaSQL.getString("fecha"));
+                actividad.setFecha(tablaSQL.getDate("fecha"));
                 actividad.setFormaDeOperar(tablaSQL.getString("forma_operar"));
                 listaActividades.add(actividad);
             }
@@ -65,7 +66,7 @@ public class ActividadDAO implements IActividadDAO{
         
         int id = actividad.getId();
         String nombre = actividad.getNombre();
-        String fecha = actividad.getFecha();
+        Date fecha = actividad.getFecha();
         String formaDeOperar = actividad.getFormaDeOperar();
         
         try{
@@ -73,7 +74,7 @@ public class ActividadDAO implements IActividadDAO{
             comando.setInt(1, id);
             comando.setInt(2, idObjetivo);
             comando.setString(3, nombre);
-            comando.setString(4, fecha);
+            comando.setDate(4, fecha);
             comando.setString(5, formaDeOperar);
             success = comando.execute();
         }catch(SQLException ex){
@@ -108,28 +109,34 @@ public class ActividadDAO implements IActividadDAO{
     @Override
     public boolean editarActividad(Actividad actividadActualizada, int idObjetivo) {
         
-        String informacionActividad[] = new String[4];
-        informacionActividad[0] = Integer.toString(idObjetivo);
-        informacionActividad[1] = actividadActualizada.getNombre();
-        informacionActividad[2] = actividadActualizada.getFecha();
-        informacionActividad[3] = actividadActualizada.getFormaDeOperar();
-        
         boolean success = true;
         conexion = DataBase.obtenerConexion();
         
         try{
-            for(int i = 0; i < 4; i++){
-                query = getColumnaQuery(i);
-                PreparedStatement comando = conexion.prepareStatement(query);
-                if(i == 0){
-                    comando.setInt(1, Integer.parseInt(informacionActividad[i]));
-                }else{
-                    comando.setString(1, informacionActividad[i]);
-                }
-                
-                comando.setInt(2, actividadActualizada.getId());
-                comando.execute();
-            }
+            query = "update actividad set idObjetivo = ? where idActividad = ?";
+            PreparedStatement comando = conexion.prepareStatement(query);
+            comando.setInt(1, idObjetivo);
+            comando.setInt(2, actividadActualizada.getId());
+            comando.execute();
+            
+            query = "update actividad set nombre = ? where idActividad = ?";
+            comando = conexion.prepareStatement(query);
+            comando.setString(1, actividadActualizada.getNombre());
+            comando.setInt(2, actividadActualizada.getId());
+            comando.execute();
+            
+            query = "update actividad set fecha = ? where idActividad = ?";
+            comando = conexion.prepareStatement(query);
+            comando.setDate(1, actividadActualizada.getFecha());
+            comando.setInt(2, actividadActualizada.getId());
+            comando.execute();
+            
+            query = "update actividad set forma_operar = ? where idActividad = ?";
+            comando = conexion.prepareStatement(query);
+            comando.setString(1, actividadActualizada.getFormaDeOperar());
+            comando.setInt(2, actividadActualizada.getId());
+            comando.execute();
+            
         }catch(SQLException ex){
             Logger.getLogger(ActividadDAO.class.getName()).log(Level.SEVERE, null, ex);
             success = false;
@@ -139,23 +146,5 @@ public class ActividadDAO implements IActividadDAO{
         
         return success;
     }
-    
-    private String getColumnaQuery(int columna){
-        
-        String query = "";
-        
-        switch(columna){
-            case 0: query = "update actividad set idObjetivo = ? where idActividad = ?";
-            break;
-            case 1: query = "update actividad set nombre = ? where idActividad = ?";
-            break;
-            case 2: query = "update actividad set fecha = ? where idActividad = ?";
-            break;
-            case 3: query = "update actividad set forma_operar = ? where idActividad = ?";
-            break;
-        }
-        
-        return query;
-    } 
 
 }

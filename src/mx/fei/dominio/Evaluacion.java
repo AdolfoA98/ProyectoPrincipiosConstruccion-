@@ -12,10 +12,19 @@ package mx.fei.dominio;
 
 public class Evaluacion {
     
+    private int id;
     private String elemento;
-    private double porcentaje;
+    private float porcentaje;
     
     public Evaluacion(){}
+    
+    public void setId(int id){
+        this.id = id;
+    }
+    
+    public int getId(){
+        return id;
+    }
     
     public void setElemento(String elemento){
         this.elemento = elemento;
@@ -25,11 +34,11 @@ public class Evaluacion {
         return elemento;
     }
     
-    public void setPorcentaje(double porcentaje){
+    public void setPorcentaje(float porcentaje){
         this.porcentaje = porcentaje;
     }
     
-    public double getPorcentaje(){
+    public float getPorcentaje(){
         return porcentaje;
     }
 }

@@ -11,17 +11,17 @@ package mx.fei.dominio;
 
 public class TemaExamen {
     
-    private String nombre;
     private String parcial;
+    private String temas;
     
     public TemaExamen(){}
     
-    public void setNombre(String nombre){
-        this.nombre = nombre;
+    public void setTemas(String temas){
+        this.temas = temas;
     }
     
-    public String getNombre(){
-        return nombre;
+    public String getTemas(){
+        return temas;
     }
     
     public void setParcial(String parcial){

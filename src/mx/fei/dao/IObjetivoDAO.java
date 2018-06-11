@@ -15,8 +15,8 @@ import mx.fei.dominio.Objetivo;
 public interface IObjetivoDAO {
     
     List<Objetivo> obtenerObjetivos();
-    boolean agregarObjetivo(Objetivo objetivo);
-    boolean eliminarObjetivo(int idObjetivo);
-    boolean actualizarObjetivos(List<Objetivo> listaObjetivosActualizada);
-    boolean actualizarObjetivo(Objetivo objetivoActualizado);
+    boolean agregarObjetivo(Objetivo objetivo, int idPlanDeTrabajo);
+    boolean eliminarObjetivo(Objetivo objetivor);
+    boolean actualizarObjetivos(List<Objetivo> listaObjetivosActualizada, int idPlanDeTrabajo);
+    boolean actualizarObjetivo(Objetivo objetivoActualizado, int idPlanDeTrabajo);
 }

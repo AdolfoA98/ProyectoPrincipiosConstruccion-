@@ -10,4 +10,33 @@ package mx.fei.dominio;
 
 public class Docente {
     
+    private int numeroPersonal;
+    private String nombre;
+    private String email;
+    
+    public Docente() {}
+    
+    public void setNumeroPersonal(int numeroPersonal){
+        this.numeroPersonal = numeroPersonal;
+    }
+    
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+    
+    public void setEmail(String email){
+        this.email = email;
+    }
+    
+    public int getNumeroPersonal(){
+        return numeroPersonal;
+    }
+    
+    public String getNombre(){
+        return nombre;
+    }
+    
+    public String getEmail(){
+        return email;
+    }
 }
