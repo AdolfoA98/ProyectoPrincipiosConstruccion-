@@ -8,17 +8,20 @@
 */
 package mx.fei.dao;
 
+import java.sql.Date;
 import java.util.ArrayList;
-import org.junit.Test;
-import static org.junit.Assert.*;
-import mx.fei.dominio.Actividad;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import mx.fei.dominio.Actividad;
 import mx.fei.dominio.GeneradorClave;
 import mx.fei.excepcion.TablaNoEncontradaException;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class ActividadDAOTest {
+    
+    private static final Logger logger = LogManager.getLogger(GeneradorClave.class);
     
     private List<Actividad> listaActividades = new ArrayList<>();
     private ActividadDAO actividadDAO = new ActividadDAO();
@@ -29,13 +32,13 @@ public class ActividadDAOTest {
         Actividad actividad1 = new Actividad();
         actividad1.setId(primerId);
         actividad1.setNombre("Smell Code");
-        actividad1.setFecha("28/03/2018");
+        actividad1.setFecha(new Date(System.currentTimeMillis()));
         actividad1.setFormaDeOperar("Reporte de lectura del texto Smell Code");
         
         Actividad actividad2 = new Actividad();
         actividad2.setId(segundoId);
         actividad2.setNombre("Secure Code");
-        actividad2.setFecha("20/03/2018");
+        actividad2.setFecha(new Date(System.currentTimeMillis()));
         actividad2.setFormaDeOperar("Reporte de lectura del texto Secure Code");
         
         listaActividades.add(actividad1);
@@ -48,7 +51,7 @@ public class ActividadDAOTest {
         try{
             id = GeneradorClave.obtenerId("Actividad");
         }catch(TablaNoEncontradaException ex){
-            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+            logger.error("La tabla introducida no existe en la base de datos");
         }
         
         return id;
@@ -58,7 +61,7 @@ public class ActividadDAOTest {
     *   Funciones Test del método agregar contacto.
     */
     @Test
-    public void pruebaAgregarContacto(){
+    public void pruebaAgregarActividad(){
         
         boolean success = false;
         
@@ -112,6 +115,28 @@ public class ActividadDAOTest {
         }
         
         assertEquals("Verifica si la actividad fue eliminada", true, success);
+    }
+    
+    @Test
+    public void pruebaEditarActividad(){
+        
+        List<Actividad> actividades = actividadDAO.obtenerActividades(123456);
+        
+        //String nombreActualizado = "Conferencia DAO Pattern";
+        String formaActualizada ="Conferencia en auditorio de la faculta";
+        
+        Actividad actividadActualizada = actividades.get(actividades.size() - 1);
+        //actividadActualizada.setNombre(nombreActualizado);
+        actividadActualizada.setFormaDeOperar(formaActualizada);
+        
+        actividadDAO.editarActividad(actividadActualizada, 123456);
+        
+        actividades = actividadDAO.obtenerActividades(123456);
+        
+        //String nombreActual = actividades.get(actividades.size() - 1).getNombre();
+        String formaActual = actividades.get(actividades.size() - 1).getFormaDeOperar();
+        
+        assertEquals("Prueba para editaractividad", formaActualizada, formaActual);
     }
     
 }
